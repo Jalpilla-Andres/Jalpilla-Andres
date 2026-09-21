@@ -13,7 +13,7 @@
 <!-- TYPING HEADER -->
 
 <a href="https://github.com/Jalpilla-Andres">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=25&duration=2600&pause=900&color=38BDF8&center=true&vCenter=true&width=900&lines=Andres+Jalpilla+-+Telematics+Engineer;Jr.+Developer+%7C+Java+%7C+Networking;Building+projects+%7C+Learning+%7C+Shipping" alt="Typing header">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=25&duration=2600&pause=900&color=38BDF8&center=true&vCenter=true&width=900&lines=Andres+Jalpilla+-+Telematics+Engineer;Jr.+Developer+%7C+Java+%7C+Networking;Building+projects+%7C+Learning+%7C+Shipping+%7C+IA" alt="Typing header">
 </a>
 
 <br>
