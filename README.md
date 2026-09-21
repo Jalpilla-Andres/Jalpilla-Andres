@@ -3,7 +3,7 @@
 <!-- TYPING HEADER -->
 
 <a href="https://github.com/Jalpilla-Andres">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=2F81F7&center=true&vCenter=true&width=900&lines=Andres+Jalpilla+-+Telematics+Engineer;Jr.+Developer+%7C+Java+%7C+Networking;Building+projects+and+learning+every+day" alt="Typing SVG">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=2F81F7&center=true&vCenter=true&width=900&lines=Andres+Jalpilla+-+Telematics+Engineer;Jr.+Developer+%7C+Java+%7C+Networking+%7C+IA;Building+projects+and+learning+every+day" alt="Typing SVG">
 </a>
 
 <br><br>
@@ -54,12 +54,12 @@ I enjoy building projects, learning new technologies and applying what I learn t
 
 | Area             | Technologies                              |
 | ---------------- | ----------------------------------------- |
-| 💻 Programming   | Java, Kotlin, TypeScript, JavaScript      |
+| 💻 Programming   | Java, Kotlin, TypeScript, JavaScript, Python|
 | 🌐 Networking    | Computer Networks, Distributed Systems    |
 | 🔐 Cybersecurity | Security Fundamentals, Systems & Networks |
 | 🖥️ Development  | Git, GitHub, VS Code                      |
 | 🐧 Systems       | Linux                                     |
-| 🤖 AI            | AI-assisted development & experimentation |
+| 🤖 IA            | IA-assisted development & experimentation |
 
 </div>
 
