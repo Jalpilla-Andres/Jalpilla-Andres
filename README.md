@@ -1,14 +1,22 @@
 <div align="center">
 
+<!-- TERMINAL BANNER -->
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
+  <img src="assets/banner-dark.svg" width="100%" alt="Andres Jalpilla profile banner">
+</picture>
+
+<br>
+
 <!-- TYPING HEADER -->
 
 <a href="https://github.com/Jalpilla-Andres">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=2F81F7&center=true&vCenter=true&width=900&lines=Andres+Jalpilla+-+Telematics+Engineer;Jr.+Developer+%7C+Java+%7C+Networking+%7C+IA;Building+projects+and+learning+every+day" alt="Typing SVG">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=25&duration=2600&pause=900&color=38BDF8&center=true&vCenter=true&width=900&lines=Andres+Jalpilla+-+Telematics+Engineer;Jr.+Developer+%7C+Java+%7C+Networking;Building+projects+%7C+Learning+%7C+Shipping" alt="Typing header">
 </a>
 
-<br><br>
-
-<!-- SOCIAL / PROFILE -->
+<br>
 
 <a href="https://github.com/Jalpilla-Andres">
   <img src="https://img.shields.io/badge/GitHub-Jalpilla--Andres-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
@@ -16,7 +24,7 @@
 
   
 
-<img src="https://komarev.com/ghpvc/?username=Jalpilla-Andres&style=flat&color=2F81F7&label=profile+views" alt="Profile Views">
+<img src="https://komarev.com/ghpvc/?username=Jalpilla-Andres&style=flat&color=38BDF8&label=profile+views" alt="Profile views">
 
 </div>
 
@@ -24,25 +32,24 @@
 
 ## 👨‍💻 This is me :)
 
-Hi, I'm **Andres Jalpilla**, a **Telematics Engineer** and **Junior Developer** interested in software development, networking, systems and cybersecurity.
+Hi, I'm **Andres Jalpilla**, a **Telematics Engineer** and **Junior Developer** interested in software development, networking, systems, cybersecurity and practical AI.
 
-I enjoy building projects, learning new technologies and applying what I learn to practical problems.
+I like building things that connect software, hardware and real-world problems. My portfolio is a mix of academic projects, application development, systems work and experimentation with new technologies.
 
-* 💻 **Junior Developer** focused on Java and application development.
-* 🌐 Interested in **networking, telecommunications and distributed systems**.
-* 🔐 Exploring **cybersecurity** and secure technologies.
-* 🤖 Interested in **Artificial Intelligence** and its practical applications.
-* 🛠️ I enjoy developing projects that combine **software, hardware and technology**.
-* 🚀 Currently focused on improving my skills and building my professional portfolio.
-* 📚 Always learning, experimenting and working on new projects.
+* 💻 Focused on **Java** and application development.
+* 🌐 Interested in **computer networking, telematics and distributed systems**.
+* 🔐 Exploring **cybersecurity, infrastructure and secure systems**.
+* 🤖 Interested in **Artificial Intelligence** and AI-assisted development.
+* 🛠️ I enjoy projects that connect **software + hardware + engineering**.
+* 🚀 Currently growing my professional portfolio and shipping new projects.
 
 ---
 
 <div align="center">
 
-## ⚡ My Tech Stack
+## ⚡ my perfect stack
 
-<img src="https://skillicons.dev/icons?i=java,kotlin,typescript,javascript,python,html,css,git,github,linux,vscode,docker&perline=6" alt="Tech Stack">
+<img src="https://skillicons.dev/icons?i=java,kotlin,typescript,javascript,python,html,css,git,github,linux,docker,vscode&perline=6" alt="Technology stack">
 
 </div>
 
@@ -50,82 +57,73 @@ I enjoy building projects, learning new technologies and applying what I learn t
 
 <div align="center">
 
-## 🧠 Technologies & Interests
+## 📡 signals
 
-| Area             | Technologies                              |
-| ---------------- | ----------------------------------------- |
-| 💻 Programming   | Java, Kotlin, TypeScript, JavaScript, Python|
-| 🌐 Networking    | Computer Networks, Distributed Systems    |
-| 🔐 Cybersecurity | Security Fundamentals, Systems & Networks |
-| 🖥️ Development  | Git, GitHub, VS Code                      |
-| 🐧 Systems       | Linux                                     |
-| 🤖 IA            | IA-assisted development & experimentation |
+<table>
+<tr>
 
-</div>
+<td width="50%" align="center" valign="middle">
 
----
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/radar-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/radar-light.svg">
+  <img src="assets/radar-dark.svg" width="400" alt="Skill radar chart">
+</picture>
 
-## 🚀 Featured Projects
+</td>
 
-### 🌊 TlalocBox
+<td width="50%" align="center" valign="middle">
 
-Monitoring system for water quality in storm drains or cisterns.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/radar-langs-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/radar-langs-light.svg">
+  <img src="assets/radar-langs-dark.svg" width="400" alt="Language radar chart">
+</picture>
 
-🔗 [View repository](https://github.com/Jalpilla-Andres/TlalocBox)
+</td>
 
-### ☕ Sistemas Distribuidos
-
-Academic project focused on distributed systems using Java.
-
-🔗 [View repository](https://github.com/Jalpilla-Andres/Sistemas-Distribuidos)
-
-### 📱 Proyecto Terminal
-
-Application development project using Kotlin.
-
-🔗 [View repository](https://github.com/Jalpilla-Andres/ProyectoTerminal2_aplicativo2)
-
-### 🌐 Portfolio JSON
-
-Configurable personal portfolio project using Astro.
-
-🔗 [View repository](https://github.com/Jalpilla-Andres/Portafolio-Json)
-
----
-
-<div align="center">
-
-## 📊 GitHub Statistics
-
-<a href="https://github.com/Jalpilla-Andres">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Jalpilla-Andres&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true" alt="GitHub Stats"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Jalpilla-Andres&layout=compact&langs_count=8&theme=tokyonight&hide_border=true" alt="Top Languages"/>
-</a>
+</tr>
+</table>
 
 </div>
 
 ---
 
-<div align="center">
+## 🚀 Featured projects
 
-## 📈 Contribution Graph
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Jalpilla-Andres&theme=tokyo-night&hide_border=true" alt="Contribution Graph">
-
-</div>
+| Project                                                                                               | What it is                                                    |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [**TlalocBox**](https://github.com/Jalpilla-Andres/TlalocBox)                                         | Water-quality monitoring system for storm drains or cisterns. |
+| [**Sistemas-Distribuidos**](https://github.com/Jalpilla-Andres/Sistemas-Distribuidos)                 | Distributed systems project using Java.                       |
+| [**ProyectoTerminal2_aplicativo2**](https://github.com/Jalpilla-Andres/ProyectoTerminal2_aplicativo2) | Kotlin application project.                                   |
+| [**mi-jarvis-anelys**](https://github.com/Jalpilla-Andres/mi-jarvis-anelys)                           | Virtual assistant with tool-oriented interactions.            |
 
 ---
 
 <div align="center">
 
-### 💡 Building. Learning. Improving.
+## 📊 Numbers matter? ohhh yes.
 
-*"Every project is another step forward."*
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/card-stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/card-stats-light.svg">
+  <img src="assets/card-stats-dark.svg" width="520" alt="GitHub statistics">
+</picture>
 
 <br>
 
-<a href="https://github.com/Jalpilla-Andres">
-  <img src="https://img.shields.io/badge/Explore%20my%20repositories-181717?style=for-the-badge&logo=github&logoColor=white" alt="Explore repositories">
-</a>
+<img src="assets/metrics.languages.svg" width="560" alt="Most used languages">
 
 </div>
+
+---
+
+<div align="center">
+
+### 💡 Build. Learn. Repeat.
+
+<sub>`git commit -m "keep learning, keep building"`</sub>
+
+</div>
+
+---
