@@ -12,6 +12,9 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
+
+# Animated portrait banner generator (see scripts/banner/generate.py).
+BANNER_GENERATOR = ROOT / "scripts" / "banner" / "generate.py"
 CFG_PATH = ASSETS / "profile.json"
 USER = "Jalpilla-Andres"
 API = "https://api.github.com"
@@ -215,10 +218,14 @@ def language_card(stats, theme):
     return svg_doc('\n'.join(body),760,190,bg)
 
 
+def run_animated_banner():
+    import subprocess, sys
+    subprocess.run([sys.executable, str(BANNER_GENERATOR)], check=True)
+
+
 def main():
+    run_animated_banner()
     cfg=load_config(); stats=fetch_stats();
-    (ASSETS/'banner-dark.svg').write_text(banner('dark'),encoding='utf-8')
-    (ASSETS/'banner-light.svg').write_text(banner('light'),encoding='utf-8')
     body,w,h=radar_svg(cfg['skills'],'Skill signals','dark'); (ASSETS/'radar-dark.svg').write_text(svg_doc(body,w,h,'#0B1220'),encoding='utf-8')
     body,w,h=radar_svg(cfg['skills'],'Skill signals','light'); (ASSETS/'radar-light.svg').write_text(svg_doc(body,w,h,'#FFFFFF'),encoding='utf-8')
     body,w,h=radar_svg(cfg['languages'],'Language signals','dark'); (ASSETS/'radar-langs-dark.svg').write_text(svg_doc(body,w,h,'#0B1220'),encoding='utf-8')
