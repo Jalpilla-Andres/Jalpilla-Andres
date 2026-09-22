@@ -1,21 +1,26 @@
 """Particle-portrait engine for the profile banner.
 
 Turns a real photo into a static, pre-baked SVG/SMIL animation: the photo is
-dithered into a point cloud once at build time, an "exploded" version of the
-exact same points is computed once, and the browser just interpolates
-between those two frozen arrays forever. Because both endpoints of every
-loop are the *same stored numbers* (not something recomputed live), cycle 1,
-cycle 50 and cycle 5000 are bit-for-bit identical -- there is no state that
-can drift, blur or accumulate error between repeats.
+dithered into a point cloud once at build time, two more scenes (an AI motif
+and a networking motif) are generated as point clouds too, and the browser
+just interpolates between those frozen arrays forever. Because every state
+in the loop is a *stored, pre-computed* array (never something recomputed
+live), cycle 1, cycle 50 and cycle 5000 are bit-for-bit identical -- there is
+no state that can drift, blur or accumulate error between repeats.
 
 No JavaScript, no canvas, no external runtime: everything heavy (dithering,
-sampling, path packing) happens once in Python during the GitHub Actions
-build, and the output is a handful of numbers baked into the SVG.
+sampling, optimal-transport pairing, path packing) happens once in Python
+during the GitHub Actions build, and the output is a handful of numbers
+baked into the SVG.
 """
 from __future__ import annotations
 
+import math
+
 import numpy as np
-from PIL import Image, ImageEnhance, ImageFilter, ImageOps
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageOps
+from scipy.optimize import linear_sum_assignment
+from scipy.spatial.distance import cdist
 
 
 def _serpentine_dither(gray: np.ndarray) -> np.ndarray:
