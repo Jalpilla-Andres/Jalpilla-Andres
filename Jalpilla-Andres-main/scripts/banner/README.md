@@ -69,3 +69,7 @@ This regenerates:
 - the scene `.npy` data under `scripts/banner/data/`
 
 GitHub Actions regenerates the same files whenever the configured source/generator files change.
+
+## Loop quality fix
+
+The particle opacity is intentionally constant now. Earlier versions animated opacity per keyframe, which could make the portrait look under-defined when the SVG restarted its loop in GitHub's renderer. The final portrait frame is also an exact copy of the opening portrait frame, so the loop closes without a visual quality drop.

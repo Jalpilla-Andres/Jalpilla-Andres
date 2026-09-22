@@ -267,7 +267,37 @@ def scene_points(kind: str) -> np.ndarray:
 def resample_points(points, count, rng):
     if len(points) == 0:
         return np.zeros((count,2),dtype=np.float32)
-    idx=rng.choice(len(points),count,replace=len(points)<count)
+    if len(points) <= count:
+        idx = np.arange(len(points))
+        if len(points) < count:
+            idx = rng.choice(idx, count, replace=True)
+        return points[idx]
+
+    # Stratified sampling preserves local facial detail better than a purely
+    # random draw: split the portrait field into small bins and sample across
+    # the whole silhouette before filling any remaining slots.
+    if len(points) > 5000:
+        x, y = points[:, 0], points[:, 1]
+        bins_x = np.clip(((x - 55) / 18).astype(int), 0, 21)
+        bins_y = np.clip(((y - 135) / 18).astype(int), 0, 22)
+        groups = {}
+        for i, key in enumerate(zip(bins_y, bins_x)):
+            groups.setdefault(key, []).append(i)
+        keys = list(groups)
+        picks = []
+        # One representative from each occupied bin first.
+        for key in keys:
+            picks.append(groups[key][int(rng.integers(0, len(groups[key])))])
+        remaining = count - len(picks)
+        if remaining > 0:
+            pool = np.array([i for i in range(len(points)) if i not in set(picks)], dtype=int)
+            extra = rng.choice(pool, remaining, replace=False)
+            picks.extend(extra.tolist())
+        elif remaining < 0:
+            picks = rng.choice(np.asarray(picks), count, replace=False).tolist()
+        return points[np.asarray(picks[:count], dtype=int)]
+
+    idx = rng.choice(len(points), count, replace=False)
     return points[idx]
 
 
@@ -300,29 +330,18 @@ def path_from_points(points):
 
 
 def add_particle(parts, idx, n, frames, times, style, color, rng):
-    # Different particle sizes make the scene feel less like a uniformly tiled bitmap.
-    r = (0.55, 0.9, 1.15)[idx % 3]
-    op = (0.34, 0.58, 0.82)[idx % 3]
+    # Keep traveller opacity CONSTANT. The previous version animated opacity
+    # independently from position, which could make the second loop look much
+    # softer on GitHub's SVG renderer even though the particle coordinates were
+    # identical. Burst depth now comes from motion + the separate burst rings.
+    r = (0.60, 0.90, 1.20)[idx % 3]
+    op = (0.62, 0.74, 0.88)[idx % 3]
     vals = particle_values(frames, idx)
     key_times = ";".join(num(x/LOOP_SECONDS) for x in times)
     key_splines = ";".join(style["ease"] for _ in range(len(times)-1))
-    # Visibility pulses at burst/snap/hold keyframes. Keep the number of
-    # opacity values exactly aligned with the generated keyframe count.
-    pulse=[]
-    for k in range(len(times)):
-        if k == 0:
-            pulse.append(str(op))
-        elif k >= 2 and k % 3 == 2:
-            pulse.append("0.10")       # burst: particles spread / thin out
-        elif k >= 3 and k % 3 == 0:
-            pulse.append("0.86")       # snap: particles arrive strongly
-        else:
-            pulse.append(str(op))
-    opacity_values=";".join(pulse)
     parts.append(
         f'<circle r="{r}" fill="{color}" opacity="{op}">'
         f'<animateTransform attributeName="transform" type="translate" begin="0s" dur="{LOOP_SECONDS}s" repeatCount="indefinite" calcMode="spline" keyTimes="{key_times}" keySplines="{key_splines}" values="{vals}"/>'
-        f'<animate attributeName="opacity" dur="{LOOP_SECONDS}s" repeatCount="indefinite" calcMode="spline" keyTimes="{key_times}" keySplines="{key_splines}" values="{opacity_values}"/>'
         '</circle>'
     )
 
@@ -382,7 +401,9 @@ def render(theme_name, portrait, targets, rng):
     tang=np.column_stack([-radial[:,1],radial[:,0]])
     burst_pos=center + radial*(style["burst"]*(42 + rng.random((n,1))*86)) + tang*(rng.normal(0,30,size=(n,1)))
     current_time += burst; times.append(current_time); frame_points.append(burst_pos); labels.append("portrait")
-    times.append(LOOP_SECONDS); frame_points.append(b); labels.append("portrait")
+    # The final frame is the EXACT same particle array as the opening frame.
+    # Keeping traveller opacity constant makes the loop visually lossless.
+    times.append(LOOP_SECONDS); frame_points.append(np.array(scenes["portrait"], copy=True)); labels.append("portrait")
 
     # normalize in case rounding pushed the end slightly beyond LOOP_SECONDS
     scale=LOOP_SECONDS/max(times[-1],LOOP_SECONDS)
